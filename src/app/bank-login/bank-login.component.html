@@ -1,0 +1,20 @@
+<div class="d-flex main justify-content-center py-5">
+    <div class="container w-50  shadow p-5 "  >
+        <h2 class="display-5 mb-5 fw-bold text-center">Bank Login</h2>
+        <form action="" #log="ngForm" (ngSubmit)="onBankLogin(log)">
+
+            <div class="mb-3" >
+                <label for="exampleInputEmail1" class="form-label ">User Id</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" ngModel name="user_id"   required/>
+              </div>
+
+             <div class="mb-3" >
+                <label for="exampleInputEmail1" class="form-label ">Password</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" ngModel name="password"   required/>
+              </div>
+
+              
+              <button class="btn btn-custom" >Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container pt-5 pb-4">
+</div>
+<div class="container pb-5">
+  <h2 class="money-transfer-heading display-5 fw-bold">Transfer Fund</h2>
+  <hr class="pb-5"/>
+  <form >
+      <div class="mb-5">
+        <div class="col-md-4"><label for="account-holder-name" class="form-label">Sender Account</label></div>
+            <div class="col-md-8"><p>{{model.senderAccountNo}}</p></div>
+        </div>
+
+        <div class="mb-4 row">
+            <div class="col-md-4"><label for="account-holder-name" class="form-label">total Money</label></div>
+            <div class="col-md-8"><p>{{model.sendertotalBalance}}</p></div>
+          </div>
+
+      <div class="mb-4 row">
+          <div class="col-md-4"><label for="account-holder-name" class="form-label">Account Holder Name (Receiver)</label></div>
+          <div class="col-md-8"><input type="text" class="form-control"  id="account-holder-name" [(ngModel)]="model.receiverName" name="receiverName" ></div>
+        </div>
+       
+        <div class="mb-4 row">
+          <div class="col-md-4"> <label for="ifsc-code" class="form-label">IFSC Code</label></div>
+          <div class="col-md-8"> <input type="text" class="form-control"  id="ifsc-code" [(ngModel)]="model.reciverIfsc" name="reciverIfsc"></div>
+        </div>
+     
+      <div class="mb-4 row">
+        <div class="col-md-4"> <label for="confirm-account-number" class="form-label">Account Number</label></div>
+        <div class="col-md-8"> <input type="text" class="form-control" id="confirm-account-number" aria-describedby="confirmAccountNumber" [(ngModel)]="model.reciverAccountNo" name="reciverAccountNo"></div>
+      </div>
+      <div class="mb-4 row">
+          <div class="col-md-4"> <label for="confirm-account-number" class="form-label">Confirm Account Number</label></div>
+          <div class="col-md-8"> <input type="text" class="form-control" id="confirm-account-number" aria-describedby="confirmAccountNumber"></div>
+        </div>
+        <div class="mb-4 row row">
+            <div class="col-md-4"><label for="amount" class="form-label">Amount</label></div>
+            <div class="col-md-8"><input type="text" class="form-control"  id="amount" [(ngModel)]="model.debitedAmount" name="debitedAmount"></div>
+        </div>
+       
+      <button type="submit" class="btn submit-bank-transfer py-3 mt-3" name="bank-transfer-submit" (click)="ontranaction()">Send Money</button>
+    </form>
+</div>

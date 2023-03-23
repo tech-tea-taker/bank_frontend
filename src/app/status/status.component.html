@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <h1>Account Creating Status</h1>
+      <table class="rwd-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Submitting Date</th>
+                <th>Approved Status</th>
+                <th>Email Status</th>
+              </tr>
+        </thead>
+        <tbody *ngFor="let m of model">
+         
+          <tr>
+            <td >
+              {{m.name}}
+            </td>
+            <td >
+              {{m.submit_date}}
+            </td>
+           
+            <td >
+              <div *ngIf="m.approve==1;else wait">
+                <span class="badge rounded-pill text-bg-success">Approved</span>
+              </div>
+              <ng-template #wait>
+                <div *ngIf="m.approve==-1; else bt">
+                  <span class="badge rounded-pill text-bg-danger">Rejected</span>
+                </div>
+              </ng-template>
+             <ng-template #bt>
+              <div>
+                <span class="badge rounded-pill text-bg-warning">waiting</span>
+              </div>
+             </ng-template>
+            </td>
+            <td>
+              <div *ngIf="m.email_sent==1">
+                <span class="badge rounded-pill text-bg-success">Sent</span>
+              </div> 
+              <div *ngIf="m.email_sent==0">
+                <span class="badge rounded-pill text-bg-danger">not Sent</span>
+              </div> 
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>

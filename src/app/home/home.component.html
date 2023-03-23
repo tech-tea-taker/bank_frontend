@@ -1,0 +1,252 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom py-3 px-3 ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h2>YML BANK</h2></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/banklogin">Bank Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/status">Status</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Apply online
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/register">Saving Account</a></li>
+            <li><a class="dropdown-item" href="#">Fixed Deposite</a></li>
+            <li><a class="dropdown-item" href="#">Recurring Account</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="../../assets/image/first_slide.jpg"
+        class="d-block w-100 carousel-img"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="../../assets/image/2nd_slide.jpg"
+        class="d-block w-100 carousel-img"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="../../assets/image/3rd_slide.jpg"
+        class="d-block w-100 carousel-img"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container d-flex justify-content-evenly py-5">
+  <div class="hero_text rounded">
+    <div class="d-flex justify-content-center">
+      <h1 class="pt-5 text-custom pb-2">Log In</h1>
+    </div>
+    <div class="container px-5 pt-2 pb-5">
+      <form class="mt-3" action="" #log="ngForm" (ngSubmit)="login(log)">
+        <input class="form-control mb-3" type="text" placeholder="Enter User Id"  ngModel name="userID"/>
+        <input class="form-control mb-4" type="text" placeholder="Enter Password" ngModel name="password"/>
+       <div class="button-wrap text-center">
+         <button class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="hero_img">
+    <img class="img-fluid" src="assets/image/3d.jpg" alt="" />
+  </div>
+</div>
+
+<div class="bg-gray py-4">
+  <div class="container my-5">
+    <div class="d-flex justify-content-around">
+  <div class="card shadow card_gray mt-4 align-center p-3">
+    <img src="https://svgshare.com/i/JpQ.svg" alt="Online Banking" class="img-icon mt-5">
+    <h4 class="py-2">Online Banking</h4>
+    <p class="text-center" > Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.</p>
+  </div>
+  <div class="card shadow card_gray mt-4 align-center p-3">
+    <img src="https://svgshare.com/i/Joj.svg" alt="Simple Budgeting" class="img-icon mt-5">
+    <h4 class="py-2"> Simple Budgeting</h4>
+    <p class="text-center ">See exactly where your money goes
+      each month. Receive notifications when you’re close to hitting your limits.</p>
+  </div>
+  <div class="card shadow card_gray mt-4 align-center  p-3">
+    <img src="https://svgshare.com/i/Jp4.svg" alt="Fast Onboarding" class="img-icon mt-5">
+    <h4 class="py-2">Fast Onboarding</h4>
+    <p class="text-center">We don’t do branches. Open your
+      account in minutes online and start taking control of your finances right away.</p>
+  </div>
+  <div class="card shadow card_gray mt-4 align-center  p-3">
+    <img src="https://svgshare.com/i/Jp4.svg" alt="Open API" class="img-icon mt-5">
+    <h4 class="py-2">Open API</h4>
+    <p class="text-center">Manage your savings, investments,
+      pension, and much more from one account. Tracking your money has never been easier.</p>
+  </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="before-footer py-5">
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-5 text-custom">News Articles</h2>
+    <div class="row">
+
+      <div class="d-flex justify-content-around">
+        <div class="card card_white shadow-lg p-3 mb-5 bg-body rounded">
+          <img src="https://i.ibb.co/LhdXbJp/moneybank.jpg" alt="currency img" class="img-fluid">
+          <div class="text-center">
+            <p class="pt-3">By Claire Robinson</p>
+            <h5>Receive money in any currency with no fees</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eos praesentium consectetur dolorem, aliquid doloribus temporibus velit cumque quod quibusdam!</p>
+          </div>
+    
+           </div>
+    
+           <div class="card card_white shadow-lg p-3 mb-5 bg-body rounded">
+            <img src="https://i.ibb.co/q5xMLBG/image-restaurant.jpg" alt="currency img" class="img-fluid">
+            <div class="text-center">
+              <p class="pt-3">By Wilson Hutton</p>
+              <h5>Treat yourself without worrying about money</h5>
+              <p class="pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eos praesentium consectetur dolorem, aliquid doloribus temporibus velit cumque quod quibusdam!</p>
+            </div>
+      
+             </div>
+    
+             <div class="card card_white shadow-lg p-3 mb-5 bg-body rounded">
+              <img src="https://i.ibb.co/gPfg9VK/image-plane.jpg" alt="currency img" class="img-fluid">
+              <div class="text-center">
+                <p class="pt-3">By Claire Robinson</p>
+                <h5>Our invite-only Beta accounts are now live!</h5>
+                <p class="pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eos praesentium consectetur dolorem, aliquid doloribus temporibus velit cumque quod quibusdam!</p>
+              </div>
+        
+               </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- footer -->
+
+<div class="container-fluid bg-custom text-light py-5">
+  <footer class="d-flex justify-content-around py-5">
+  <div>
+    <h4>Contact Us</h4>
+  
+  <div class="d-flex justify-content-evenly">
+    <a href=""><i class="fa fa-facebook text-light"></i></a>
+    <a href=""><i class="fa fa-instagram text-light"></i></a>
+    <a href=""><i class="fa fa-envelope text-light"></i></a>
+    <a href=""><i class="fa fa-twitter text-light"></i></a>
+    <a href=""><i class="fa fa-youtube text-light"></i></a>
+  </div>
+  </div>
+  <div>
+    <h5>Customer Care</h5>
+    <h6>IND: +911234567890</h6>
+    <h6>Global: +49876543245</h6>
+  </div>
+  <div>
+    <h5>Address</h5>
+    <h6>6th floor,SmartWork,KarleTown Center</h6>
+    <h6>NarkelBagan,NewTown</h6>
+    <h6>Kolkata-700002</h6>
+  </div>
+
+  <div>
+    <h4 class="text-light">Subscribe to our Newsletter</h4>
+    <div class="input-group">
+      <input type="text" class="form-control xyz" placeholder="Type your Email ID" id="txtEmailId" aria-label="Type your Email ID" tabindex="0" role="textbox">
+      <a class="btn-newsletter mx-2" id="btnsubmit"><span id="btnSumbitText" role="button" tabindex="0" data-submit="Submit" data-submitting="Submiting">Submit</span></a>
+  </div>
+
+  </div>
+  </footer>
+</div>

@@ -1,0 +1,65 @@
+  <div class="container pt-5 pb-4">
+</div>
+<div class="container pb-5">
+  <h2 class="money-transfer-heading display-5 fw-bold">Transaction History<button class="text-primary border-0 bg-transparent" ><i class="fa fa-file-text"></i></button></h2>
+  <hr class="pb-5"/>
+  <form >
+    <div class="mb-5 row">
+      <div class="col-md-4"><label for="account-holder-name" class="form-label">Account Number</label></div>
+          <div class="col-md-8"><p>{{accountNumber}}</p></div>
+      </div>
+
+    <div class="mb-4 row">
+        <div class="col-md-4"><label for="account-holder-name" class="form-label">Starting Date</label></div>
+        <div class="col-md-8"><input type="date" class="form-control" [(ngModel)]="startingDate" name="startingDate"></div>
+      </div>
+     
+      <div class="mb-4 row">
+        <div class="col-md-4"> <label for="ifsc-code" class="form-label">Ending Date</label></div>
+        <div class="col-md-8"> <input type="date" class="form-control" [(ngModel)]="endingDate"  name="endingDate"></div>
+      </div>
+     
+    <button type="submit" class="btn submit-bank-transfer py-3 mt-3" name="bank-transfer-submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="oncredit()">History</button>
+  </form>
+</div>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Transaction History <button class="border-0 bg-transparent" (click)="generatePdf()"><i class="fa fa-file-text"></i></button></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table" id="tbl-pdf">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Transaction Id</th>
+                    <th scope="col">Transaction Amount</th>
+                    <th scope="col">Transaction Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let t of transactionModel;index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{t.tranactionId}}</td>
+                    <td class="text-danger">-{{t.debitedAmount}}</td>
+                    <td>{{t.moneyRecivingDate}}</td>
+                  </tr>
+                  <tr *ngFor="let t1 of transactionModel1;">
+                    <th scope="row">1</th>
+                    <td>{{t1.tranactionId}}</td>
+                    <td class="text-success">+{{t1.debitedAmount}}</td>
+                    <td>{{t1.moneyRecivingDate}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

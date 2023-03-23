@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <h1 class="display-4 text-center fw-bold pb-5 text-primary text-uppercase">Account Status   <i class="fa fa-sign-out text-danger mx-2 tooltip-test" title="Logout" (click)="logout()"></i></h1>
+      <table class="table table-bordered">
+        <thead class="bg-primary text-light">
+            <tr>
+                <th>Name</th>
+                <th>Submitting Date</th>
+                <th>Approved Date</th>
+                <th>Approved Status</th>
+                <th>User Id</th>
+                <th>Email Status</th>
+              </tr>
+        </thead>
+        <tbody *ngFor="let m of model">
+         
+          <tr>
+            <td>
+              {{m.name}}
+            </td>
+            <td >
+              {{m.submit_date}}
+            </td>
+            <td >
+              <div *ngFor="let n of AccountModel">
+                <div *ngIf="m.id==n.id">
+                   {{n.date}}
+                </div>
+              </div>
+            </td>
+            <td >
+              <div *ngIf="m.approve==1;else wait">
+                <span class="badge rounded-pill text-bg-success">Approved</span>
+              </div>
+              <ng-template #wait>
+                <div *ngIf="m.approve==-1; else bt">
+                  <span class="badge rounded-pill text-bg-danger">Rejected</span>
+                </div>
+              </ng-template>
+             <ng-template #bt>
+              <div>
+                <i class="fa fa-square-check mx-2" (click)="onApprove(m.id)"></i>
+                <i class="fa fa-square-xmark mx-2" (click)="onDisapprove(m.id)"></i>
+              </div>
+             </ng-template>
+
+            </td>
+            <td >
+              <div *ngFor="let n of AccountModel">
+                <div *ngIf="m.id==n.id">
+                   {{n.user_id}}
+                </div>
+              </div>
+            </td>
+            <td>
+              <div *ngIf="m.email_sent==1">
+                <span class="badge rounded-pill text-bg-success">Sent</span>
+              </div> 
+              <div *ngIf="m.email_sent==0">
+                <span class="badge rounded-pill text-bg-danger">not Sent</span>
+              </div>           
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>

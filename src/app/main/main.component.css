@@ -1,0 +1,15 @@
+.heading{
+    background: linear-gradient(to right, #044a8f, #0080FF);
+    color: #fff;
+}
+
+.card{
+    transition: all .4s ease-in-out;
+}
+.card:hover{
+cursor: pointer;
+transform: scale(1.02);
+}
+.text-heading{
+    color: #FE6847 !important;
+}
